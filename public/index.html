@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project Integrasi Sistem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Final Project Integrasi Sistem 2025</h1>
+
+    <!-- LOGIN SECTION -->
+    <div id="login-section" class="card">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="text" id="kelas" placeholder="Kelas (e.g., A)" required>
+            <input type="text" id="kelompok" placeholder="Kelompok (e.g., G)" required>
+            <input type="text" id="nrps" placeholder="NRP Anggota, pisah koma (e.g., 50...2,50...4)" required>
+            <select id="ewallet" required>
+                <option value="">-- Pilih E-Wallet --</option>
+                <option value="DoPay">DoPay</option>
+                <option value="OWO">OWO</option>
+                <option value="RING Aja">RING Aja</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- MAIN APP SECTION (Hidden by default) -->
+    <div id="app-section" class="hidden">
+        <!-- USER PROFILE -->
+        <div class="card">
+            <h2>My Profile</h2>
+            <p><strong>Kelas:</strong> <span id="profile-kelas"></span></p>
+            <p><strong>Kelompok:</strong> <span id="profile-kelompok"></span></p>
+            <p><strong>My E-Wallet:</strong> <span id="profile-ewallet"></span></p>
+            <p><strong>Saldo (Contoh):</strong> <span id="profile-balance">Rp 0</span></p>
+        </div>
+
+        <!-- WALLET ACTIONS -->
+        <div class="card">
+            <h2>Wallet</h2>
+            <form id="transfer-form">
+                <h3>Transfer Saldo</h3>
+                <input type="text" id="target-class" placeholder="Kelas Tujuan" required>
+                <input type="text" id="target-group" placeholder="Kelompok Tujuan" required>
+                <input type="number" id="transfer-amount" placeholder="Jumlah" required>
+                <button type="submit">Transfer</button>
+            </form>
+        </div>
+
+        <!-- LOG / HISTORY -->
+        <div class="card">
+            <h2>Live Log / History</h2>
+            <pre id="log-area"></pre>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
